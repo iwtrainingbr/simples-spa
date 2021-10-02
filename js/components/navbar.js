@@ -1,18 +1,17 @@
 function navbar() {
     let items = [
       "listar",
+      "relatorios",
       "cadastrar",
-      "relatorios"
     ];
 
     return `
       <hr>
       ${items.map((btn) => `
-          <button class="btn btn-outline-dark" data-component="menu" data-action="${btn.action}">
-            ${btn.text}
-          </button>
-        `
-      ).join('')}
+        <button data-component="menu" data-action="${btn}" class="btn btn-outline-dark">
+          ${btn.toUpperCase()}
+        </button>
+        `).join('')}
       <hr>
     `;
 }
