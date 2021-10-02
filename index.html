@@ -5,36 +5,24 @@
     <title>Contatinhos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   </head>
-  <body class="container">
+  <body class="container" style="background-color: #EEEEEE;">
     <h1 class="mt-5">Contatinhos</h1>
 
     <nav id="navbar"></nav>
 
-    <section data-component="content" data-content="listar">
-      <h2>Listagem de Contatos</h2>
-    </section>
+    <div class="card card-body">
+      <section data-component="content" data-content="listar"></section>
+      <section style="display: none;" data-component="content" data-content="cadastrar"></section>
+      <section style="display: none;" data-component="content" data-content="relatorios"></section>
+    </div>
 
-    <section style="display: none;" data-component="content" data-content="cadastrar">
-      <h2>Cadastro de Contato</h2>
-    </section>
-
-    <section style="display: none;" data-component="content" data-content="relatorios">
-      <h1>RElatorios</h1>
-    </section>
-
-    <section style="display: none;" data-component="content" data-content="login">
-      <h1>Indentifique-se</h1>
-    </section>
-
-    <section style="display: none;" data-component="content" data-content="teste">
-      <h1>Teste</h1>
-    </section>
-
-    <section style="display: none;" data-component="content" data-content="admin">
-      <h1>Admin</h1>
-    </section>
 
     <script src="js/components/navbar.js"></script>
+
+    <script src="js/pages/list.js"></script>
+    <script src="js/pages/register.js"></script>
+    <script src="js/pages/reports.js"></script>
+
     <script src="js/eventos.js"></script>
   </body>
 </html>
