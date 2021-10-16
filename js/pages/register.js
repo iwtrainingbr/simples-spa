@@ -1,6 +1,6 @@
 function register() {
   return `
-    <form id="form-contact">
+    <form id="form-contact" onsubmit="save()">
       <legend>Novo Contato</legend>
       <hr>
 
@@ -23,12 +23,28 @@ function register() {
 
 document.querySelector('[data-content="cadastrar"]').innerHTML = register();
 
-document.getElementById('form-contact').addEventListener('submit', () => {
+function save() {
   event.preventDefault();
 
   const INPUT_NAME = document.getElementById('name');
+  const INPUT_PHONE = document.getElementById('phone');
+  const INPUT_EMAIL = document.getElementById('email');
+  const INPUT_PHOTO = document.getElementById('photo');
 
   if (INPUT_NAME.value === '') {
     INPUT_NAME.classList.add('is-invalid');
   }
-});
+
+  let newContact = {
+    name: INPUT_NAME.value,
+    email: INPUT_EMAIL.value,
+    photo: INPUT_PHOTO.value,
+    phone: INPUT_PHONE.value,
+  };
+
+  ContactStorage.save(newContact);
+
+  document.getElementById('form-contact').reset();
+
+  alert('Novo Contato Adicionado');
+}
